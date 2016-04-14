@@ -425,6 +425,9 @@ on init
     # Configuration to G2D blocking mode
     write /sys/module/g2d_task/parameters/block_on_contension 1
 
+    # ZRAM setup
+    write /proc/sys/vm/page-cluster 0
+
     # for tsp cmd node
     chown system radio /sys/class/sec/tsp/cmd
 
@@ -1705,3 +1708,7 @@ on property:ro.bootmode=charger
 on property:sys.boot_completed=1
     # BATTERY
     write /sys/class/power_supply/battery/boot_completed "1"
+
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.${ro.hardware}
+    write /proc/sys/vm/swappiness 100
