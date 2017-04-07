@@ -24,6 +24,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
     android.hardware.thermal@2.0.vendor \
+    libsensorndkbridge \
     libutilscallstack.vendor
 
 # DRM
