@@ -36,3 +36,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 include hardware/samsung_slsi-linaro/config/BoardConfig9830.mk
 $(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
 $(call inherit-product, hardware/samsung_slsi-linaro/config/config.mk)
+
+# Call the proprietary setup
+$(call inherit-product, vendor/samsung/universal9830-common/universal9830-common-vendor.mk)
