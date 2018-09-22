@@ -99,6 +99,7 @@ TARGET_SOC := exynos990
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/configs/init/etc/fstab.exynos990
 TARGET_RECOVERY_PIXEL_FORMAT := ABGR_8888
 
 # Releasetools
