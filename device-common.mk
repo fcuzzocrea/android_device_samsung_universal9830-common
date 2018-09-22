@@ -29,7 +29,16 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1.vendor:64
+    android.hardware.gnss@2.1.vendor:64 \
+    init.gps.rc
+
+# Init
+PRODUCT_PACKAGES += \
+    fstab.exynos990 \
+    fstab.exynos990.ramdisk \
+    init.exynos990.rc.recovery \
+    init.exynos990.rc \
+    ueventd.exynos990.rc
 
 # Neuralnetworks
 PRODUCT_PACKAGES += \
@@ -42,12 +51,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64
 
+# Recovery
+PRODUCT_PACKAGES += \
+    init.recovery.exynos990.rc
+
 # RIL
 PRODUCT_PACKAGES += \
+    cass.rc \
     android.hardware.radio@1.4.vendor:64 \
     android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
     libdsms_vendor:64
+    init.baseband.rc \
+    init.vendor.rilchip.rc \
+    init.vendor.rilcommon.rc
 
 # Secure Element
 PRODUCT_PACKAGES += \
@@ -62,6 +79,19 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+
+# TUI
+PRODUCT_PACKAGES += \
+    teegris_v4.rc \
+    pa_daemon_teegris.rc
+
+# USB
+PRODUCT_PACKAGES += \
+    init.exynos990.usb.rc
+
+# Vaultkeeper
+PRODUCT_PACKAGES += \
+    vaultkeeper_common.rc
 
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
