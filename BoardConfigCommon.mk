@@ -42,6 +42,9 @@ BOARD_USE_SEC_AUDIO_SOUND_TRIGGER_ENABLED := true
 BOARD_USE_SEC_AUDIO_SUPPORT_LISTENBACK_DSPEFFECT := true
 BOARD_USE_USB_OFFLOAD := true
 
+# Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
