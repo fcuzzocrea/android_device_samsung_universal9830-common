@@ -75,5 +75,10 @@ vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 # SoundTrigger
 ro.hardware.sound_trigger.primary=exynos990
 
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
+
 # Zygote
 zygote.critical_window.minute=10
