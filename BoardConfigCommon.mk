@@ -48,6 +48,9 @@ BOARD_HAVE_BLUETOOTH := true
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 
+# Compatibility Matrix
+DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
 # Dexpreopt
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
