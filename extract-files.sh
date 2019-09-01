@@ -67,6 +67,11 @@ if [ -z "${SRC}" ]; then
 fi
 
 function blob_fixup() {
+    case "${1}" in
+        vendor/bin/vaultkeeperd|vendor/lib64/libvkservice.so)
+            sed -i 's/ro\.factory\.factory_binary/ro.vendor.factory_binary\x00/g' "${2}"
+            ;;
+    esac
 }
 
 if [ -z "${ONLY_TARGET}" ]; then
