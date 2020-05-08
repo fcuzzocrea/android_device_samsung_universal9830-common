@@ -1675,6 +1675,9 @@ on property:sys.boot_completed=1
     # BATTERY
     write /sys/class/power_supply/battery/boot_completed "1"
 
+    # Reinit lmkd to reconfigure lmkd properties
+    setprop lmkd.reinit 1    
+
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.${ro.hardware}
     write /proc/sys/vm/swappiness 60
