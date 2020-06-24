@@ -61,6 +61,9 @@ ro.surface_flinger.vsync_sf_event_phase_offset_ns=0
 ro.vendor.ddk.set.afbc=1
 vendor.hwc.exynos.vsync_mode=0
 
+# Incremental FS
+ro.incremental.enable=true
+
 # Keystore
 ro.hardware.keystore=mdfpp
 ro.security.keystore.keytype=sakv2,gak,sgak
