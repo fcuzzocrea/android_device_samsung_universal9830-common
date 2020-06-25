@@ -43,6 +43,7 @@ ro.vendor.eden.npu.version.path=/sys/devices/platform/npu_exynos/version
 ro.frp.pst=/dev/block/persistent
 
 # Graphics
+debug.sf.enable_gl_backpressure=1
 debug.sf.enable_transaction_tracing=false
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
