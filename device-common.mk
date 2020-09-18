@@ -31,12 +31,18 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor:64
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor
+
 # Neuralnetworks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor \
     android.hidl.allocator@1.0.vendor \
-    libtextclassifier_hash.vendor \
-    libhidlmemory.vendor
+    libtextclassifier_hash.vendor
 
 # Power
 PRODUCT_PACKAGES += \
@@ -47,8 +53,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor:64 \
     android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64
-    libhidltransport \
-    libhidltransport.vendor
 
 # Secure Element
 PRODUCT_PACKAGES += \
