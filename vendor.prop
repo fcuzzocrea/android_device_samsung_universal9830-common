@@ -53,3 +53,6 @@ vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
 # SoundTrigger
 ro.hardware.sound_trigger.primary=exynos990
+
+# Zygote
+zygote.critical_window.minute=10
