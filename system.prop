@@ -16,6 +16,9 @@ ro.vendor.cscsupported=1
 # Fastbootd
 ro.fastbootd.available=true
 
+# FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # HWUI
 debug.hwui.skia_atrace_enabled=false
 
