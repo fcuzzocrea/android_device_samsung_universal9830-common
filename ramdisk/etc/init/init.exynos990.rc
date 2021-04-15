@@ -306,6 +306,9 @@ on init
     chown system radio /sys/class/sensors/ssp_sensor/sensor_dump
 
     # Permissions for Fingerprint sensor
+    chmod 0660 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
     chmod 0660 /dev/qbt2000_fd
     chmod 0660 /dev/qbt2000_ipc
     chown system system /dev/qbt2000_fd
@@ -322,6 +325,7 @@ on init
     chown system radio /sys/class/fingerprint/fingerprint/intcnt
     chown system radio /sys/class/fingerprint/fingerprint/resetcnt
     chown system radio /sys/class/fingerprint/fingerprint/wuhbtest
+    chown system radio /sys/class/fingerprint/fingerprint/rb
 
     mkdir /efs/biometrics 0770 system system
     mkdir /efs/biometrics/meta 0770 system system
