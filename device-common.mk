@@ -257,6 +257,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vaultkeeper_common.rc
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung
+
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
