@@ -20,8 +20,43 @@ COMMON_PATH := device/samsung/universal9830-common
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3.vendor:32
+
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.1.vendor:64
+
+# Neuralnetworks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor \
+    android.hidl.allocator@1.0.vendor \
+    libtextclassifier_hash.vendor \
+    libhidlmemory.vendor
+
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0.vendor:64
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4.vendor:64 \
+    android.hardware.radio.config@1.2.vendor:64 \
+    android.hardware.radio.deprecated@1.0.vendor:64
+    libhidltransport \
+    libhidltransport.vendor
+
+# Secure Element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor:64
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.0.vendor:64
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
