@@ -189,7 +189,8 @@ PRODUCT_PACKAGES += \
     libdsms_vendor:64 \
     init.baseband.rc \
     init.vendor.rilchip.rc \
-    init.vendor.rilcommon.rc
+    init.vendor.rilcommon.rc \
+    secril_config_svc
 
 # Secure Element
 PRODUCT_PACKAGES += \
