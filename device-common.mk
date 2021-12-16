@@ -180,10 +180,11 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.4.vendor:64 \
     android.hardware.radio.config@1.2.vendor:64 \
     android.hardware.radio.deprecated@1.0.vendor:64 \
-    libdsms_vendor:64
+    libdsms_vendor:64 \
     init.baseband.rc \
     init.vendor.rilchip.rc \
-    init.vendor.rilcommon.rc
+    init.vendor.rilcommon.rc \
+    secril_config_svc
 
 # Secure Element
 PRODUCT_PACKAGES += \
