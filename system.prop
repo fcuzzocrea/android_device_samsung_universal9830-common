@@ -10,6 +10,9 @@ ro.vendor.cscsupported=1
 # Fastbootd
 ro.fastbootd.available=true
 
+# HWUI
+debug.hwui.skia_atrace_enabled=false
+
 # RIL
 ro.debug_level=0x494d
 
