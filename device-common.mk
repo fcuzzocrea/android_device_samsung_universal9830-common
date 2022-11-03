@@ -302,7 +302,8 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    hardware/samsung
 
 # SoundTrigger
 PRODUCT_PACKAGES += \
