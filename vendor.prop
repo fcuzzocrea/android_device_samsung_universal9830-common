@@ -45,6 +45,7 @@ ro.vendor.eden.npu.version.path=/sys/devices/platform/npu_exynos/version
 ro.frp.pst=/dev/block/persistent
 
 # Graphics
+debug.sf.enable_transaction_tracing=false
 debug.sf.latch_unsignaled=1
 debug.sf.use_content_detection_v2=false
 persist.sys.sf.color_saturation=1.0
