@@ -1597,6 +1597,7 @@ on fs
     chown system system /sys/class/lcd/panel/ccd_state
     chown system radio /sys/class/lcd/panel/conn_det
     chown system system /sys/class/lcd/panel/vrr
+    chown system system /sys/class/lcd/panel/mask_brightness
 
     # Permissions for LCD COPR
     chown system system /sys/class/lcd/panel/copr
