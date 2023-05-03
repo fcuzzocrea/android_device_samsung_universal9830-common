@@ -1,0 +1,4 @@
+# vndservice.te
+
+# EngineeringMode_vndservice
+type EngineeringMode_vndservice, vndservice_manager_type;
