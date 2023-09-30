@@ -5,9 +5,7 @@
 -vendor/lib/hw/audio.primary.exynos990.so
 -vendor/lib/hw/vendor.samsung.hardware.audio@1.0-impl.so
 -vendor/lib/libSamsungPostProcessConvertor.so
--vendor/lib/lib_SamsungRec_08020.so
 -vendor/lib/lib_SoundAlive_SRC384_ver320.so
--vendor/lib/lib_lvacfs.so
 -vendor/lib/lib_soundaliveresampler.so
 -vendor/lib/libaboxpcmdump.so
 -vendor/lib/libalsautils_sec.so
@@ -74,17 +72,6 @@ vendor/firmware/txse1.bin
 vendor/firmware/txse2.bin
 vendor/firmware/txse3.bin
 vendor/firmware/volumemonitor.bin
-
-# Bluetooth
-vendor/firmware/bcm4375B1_murata.hcd
-vendor/firmware/bcm4375B1_semco.hcd
-vendor/firmware/bcm4375B1_semco_sem.hcd
-vendor/firmware/bcmdhd_mfg.bin_b1
-vendor/firmware/bcmdhd_mon.bin_b1
-vendor/firmware/bcmdhd_sta.bin_b1
-
-# Bluetooth (A2DP)
--vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 
 # Camera
 -vendor/lib64/libSEF.quram.so
@@ -207,9 +194,6 @@ vendor/firmware/usbout.bin
 vendor/firmware/vts.bin
 vendor/firmware/yuv2bayer.bin
 
-# NFC
-vendor/firmware/nfc/sec_s3nsen4_firmware.bin
-
 # RIL
 -vendor/bin/cbd
 vendor/etc/plmn_delta.bin
@@ -276,16 +260,3 @@ vendor/tee/tui/resolution_common/ID00000100
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 -vendor/lib/libwvhidl.so
-
-# Wi-Fi
-vendor/etc/wifi/indoorchannel.info
-vendor/firmware/nvram.txt_1rh_es11_b0
-vendor/firmware/nvram.txt_1rh_es12_b0
-vendor/firmware/nvram.txt_1rh_es13_b0
-vendor/firmware/nvram.txt_1rh_es32_b0
-vendor/firmware/nvram.txt_1rh_es41_b1
-vendor/firmware/nvram.txt_1rh_es42_b1
-vendor/firmware/nvram.txt_ES00_semco_b0
-vendor/firmware/nvram.txt_ES01_semco_b0
-vendor/firmware/nvram.txt_ES02_semco_b0
-vendor/firmware/nvram.txt_ES03_semco_b0
