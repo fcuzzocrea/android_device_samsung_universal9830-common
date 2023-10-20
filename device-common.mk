@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
     audio.bluetooth.default \
+    audio.primary.exynos990 \
     audio.r_submix.default \
     libaudioroute \
     libtinyalsa \
