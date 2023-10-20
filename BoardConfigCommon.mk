@@ -31,6 +31,14 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
 
+# Audio
+BOARD_LOW_LATENCY_CAPTURE_DURATION := 20
+BOARD_USB_PLAYBACK_DURATION := 5
+BOARD_USE_MMAP_HW_VOLUME_CONTROL := true
+BOARD_USE_QUAD_MIC := true
+BOARD_USE_SEC_AUDIO_DYNAMIC_NREC := true
+BOARD_USE_USB_OFFLOAD := true
+
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
