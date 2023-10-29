@@ -16,9 +16,6 @@
 
 COMMON_PATH := device/samsung/universal9830-common
 
-# Include path
-TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
-
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
@@ -35,7 +32,15 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
 
 # Camera
-$(call soong_config_set,universal9830CameraVars,universal9830_model,$(TARGET_DEVICE))
+SOONG_CONFIG_NAMESPACES += samsungCameraVars
+SOONG_CONFIG_samsungCameraVars += extra_ids
+ifeq ($(TARGET_DEVICE),r8s)
+# ID=50 is telephoto
+SOONG_CONFIG_samsungCameraVars_extra_ids := 50
+else
+# ID=52 is telephoto
+SOONG_CONFIG_samsungCameraVars_extra_ids := 52
+endif
 
 # Compatibility Matrix
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
