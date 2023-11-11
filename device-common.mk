@@ -367,5 +367,9 @@ PRODUCT_COPY_FILES += \
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Call Samsung LSI board support package graphics properties
+include hardware/samsung_slsi-linaro/config/BoardConfig9830.mk
+$(call inherit-product, hardware/samsung_slsi-linaro/graphics/base/hwcomposer_property.mk)
+
 # Call the proprietary setup
 $(call inherit-product, vendor/samsung/universal9830-common/universal9830-common-vendor.mk)
