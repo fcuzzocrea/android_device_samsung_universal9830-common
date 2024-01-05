@@ -71,6 +71,10 @@ function blob_fixup() {
         vendor/bin/vaultkeeperd|vendor/lib64/libvkservice.so)
             sed -i 's/ro\.factory\.factory_binary/ro.vendor.factory_binary\x00/g' "${2}"
             ;;
+        vendor/lib*/libsec-ril*.so)
+            xxd -p -c0 "${2}" | sed "s/600e40f9820c805224008052e10315aa080040f9e30314aa/600e40f9820c805224008052e10315aa080040f9030080d2/g" | xxd -r -p > "${2}".patched
+            mv "${2}".patched "${2}"
+            ;;
     esac
 }
 
