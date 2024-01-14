@@ -755,6 +755,8 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chmod 0660 /dev/btpower
+    chown bluetooth system /dev/btpower
     # for BT MAC address
     mkdir /mnt/vendor/efs/bluetooth 0770 system bluetooth
     # if already exist

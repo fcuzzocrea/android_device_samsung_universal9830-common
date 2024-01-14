@@ -36,6 +36,9 @@
 /dev/block/platform/.+/by-name/uhcfg        u:object_r:uhcfg_block_device:s0
 /dev/block/platform/.+/by-name/up_param     u:object_r:up_param_block_device:s0
 
+# Bluetooth
+/dev/btpower                                u:object_r:bt_device:s0
+
 # Camera
 /dev/jsqz                u:object_r:jsqz_device:s0
 /dev/m2m1shot_scaler0    u:object_r:m2m1shot_device:s0
