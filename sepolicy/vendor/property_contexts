@@ -10,5 +10,8 @@ vendor.hwc.                u:object_r:vendor_hwc_prop:s0
 # Secure Element
 vendor.seHal.              u:object_r:vendor_sehal_prop:s0
 
+# Qcom Wifi
+vendor.qcom.wifi           u:object_r:vendor_wifi_prop:s0
+
 # Wifi
 vendor.wlan.               u:object_r:vendor_wlan_prop:s0
