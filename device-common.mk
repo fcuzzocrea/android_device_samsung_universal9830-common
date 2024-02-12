@@ -330,6 +330,13 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/samsung
 
+# SoundTrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.0-impl:32
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.samsung \
