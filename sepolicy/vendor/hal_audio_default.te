@@ -19,4 +19,6 @@ allow hal_audio_default hal_system_suspend_service:service_manager find;
 
 allow hal_audio_default hal_vendor_a2dpoffload_hwservice:hwservice_manager find;
 
+allow hal_audio_default self:netlink_kobject_uevent_socket { bind create read setopt getopt };
+
 get_prop(hal_audio_default, vendor_radio_prop)
