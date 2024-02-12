@@ -67,10 +67,6 @@ vendor.hwc.exynos.vsync_mode=0
 # Incremental FS
 ro.incremental.enable=true
 
-# Keystore
-ro.hardware.keystore=mdfpp
-ro.security.keystore.keytype=sakv2,gak,sgak
-
 # RIL
 ro.vendor.sec.radio.def_network=9,9
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
