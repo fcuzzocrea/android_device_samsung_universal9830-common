@@ -15,3 +15,6 @@ allow rild log_vendor_data_file:file create_file_perms;
 
 set_prop(rild, vendor_radio_prop)
 set_prop(rild, radio_prop)
+
+dontaudit rild default_prop:file read;
+dontaudit rild default_prop:property_service set;
