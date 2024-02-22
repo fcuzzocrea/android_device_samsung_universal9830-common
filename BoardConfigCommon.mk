@@ -186,6 +186,9 @@ BOARD_USE_SOUNDTRIGGER_HAL := true
 BOARD_USE_SOUNDTRIGGER_HAL_2_3 := true
 BOARD_USE_SOUNDTRIGGER_HAL_MMAP := true
 
+# USB
+$(call soong_config_set,samsungUsbGadgetVars,gadget_name,10e00000.dwc3)
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
