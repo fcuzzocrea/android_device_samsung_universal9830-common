@@ -353,9 +353,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     teegris_v4.rc
 
-# USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
+    android.hardware.usb.gadget-service.samsung \
     init.exynos990.usb.rc
 
 # Vibrator
