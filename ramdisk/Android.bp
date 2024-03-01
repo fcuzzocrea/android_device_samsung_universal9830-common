@@ -1,12 +1,4 @@
 prebuilt_etc {
-    name: "init.samsung.rc",
-    src: "etc/init/hw/init.samsung.rc",
-    sub_dir: "init/hw",
-    recovery_available: true,
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.baseband.rc",
     src: "etc/init/init.baseband.rc",
     sub_dir: "init",
