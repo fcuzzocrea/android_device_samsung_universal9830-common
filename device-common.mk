@@ -279,8 +279,6 @@ PRODUCT_PACKAGES += \
     fstab.exynos990 \
     fstab.exynos990.ramdisk \
     init.exynos990.rc.recovery \
-    init.samsung.rc \
-    init.samsung.rc.recovery \
     init.exynos990.rc \
     ueventd.exynos990.rc
 
