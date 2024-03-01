@@ -13,35 +13,12 @@ on init
     symlink /dev/block/platform/13100000.ufs/by-name/param /dev/block/param
 
     # CPUSET(990)
-    chown system system /dev/cpuset/top-app/cpus
-    chown system system /dev/cpuset/foreground/cpus
-    chown system system /dev/cpuset/background/cpus
-    chown system system /dev/cpuset/system-background/cpus
-    chown system system /dev/cpuset/restricted/cpus
-    chown system system /dev/cpuset/cpus
-    chmod 664 /dev/cpuset/top-app/cpus
-    chmod 664 /dev/cpuset/foreground/cpus
-    chmod 664 /dev/cpuset/background/cpus
-    chmod 664 /dev/cpuset/system-background/cpus
-    chmod 664 /dev/cpuset/restricted/cpus
-    chmod 664 /dev/cpuset/cpus
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/background/cpus 0-2
-    write /dev/cpuset/system-background/cpus 0-2
-    write /dev/cpuset/restricted/cpus 0-2
-
-    mkdir /dev/cpuset/sf
-    copy /dev/cpuset/cpus /dev/cpuset/sf/cpus
-    copy /dev/cpuset/mems /dev/cpuset/sf/mems
-
-    chown system system /dev/cpuset/sf/tasks
-    chown system system /dev/cpuset/sf/cgroup.procs
-    chown system system /dev/cpuset/sf/cpus
-
-    chmod 0664 /dev/cpuset/sf/cpus
-    chown system system /dev/cpuset/sf/cpus
-    write /dev/cpuset/sf/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,4-5
+    write /dev/cpuset/background/cpus 0-3
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
 
     mkdir /dev/cpuset/camera-daemon-high-group
     write /dev/cpuset/camera-daemon-high-group/cpus 0-7
@@ -65,8 +42,8 @@ on init
     chown system system /dev/cpuset/cgroup.procs
     chmod 0664 /dev/cpuset/tasks
 
-    # Setup cpu.shares to throttle background group at 15%
-    write /dev/cpuctl/background/cpu.shares 4096
+    # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
+    write /dev/cpuctl/background/cpu.shares 1024
 
     # setup cgroup freezer
     mkdir /dev/freezer
