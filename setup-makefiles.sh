@@ -31,7 +31,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "r8s x1s x1slte"
+write_headers "r8s x1s x1slte z3s"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
