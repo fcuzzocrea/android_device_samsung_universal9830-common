@@ -150,84 +150,87 @@
         <item>4</item>
         <item>5</item>
         <item>10</item>
-        <item>15</item>
-        <item>20</item>
-        <item>25</item>
         <item>30</item>
-        <item>35</item>
-        <item>40</item>
-        <item>45</item>
         <item>50</item>
         <item>100</item>
-        <item>300</item>
+        <item>200</item>
         <item>500</item>
         <item>1000</item>
         <item>2000</item>
         <item>2999</item>
         <item>3000</item>
+        <item>3999</item>
         <item>4000</item>
+        <item>4999</item>
         <item>5000</item>
-        <item>6000</item>
-        <item>7000</item>
-        <item>8000</item>
-        <item>9000</item>
+        <item>9999</item>
         <item>10000</item>
+        <item>19999</item>
         <item>20000</item>
+        <item>29999</item>
+        <item>30000</item>
+        <item>39999</item>
         <item>40000</item>
+        <item>49999</item>
+        <item>50000</item>
+        <item>59999</item>
+        <item>60000</item>
+        <item>79999</item>
+        <item>80000</item>
+        <item>99999</item>
+        <item>100000</item>
     </integer-array>
 
-    <!-- Array of desired screen brightness in nits corresponding to the lux values
-         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
-         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
-         brightness of an all-white image.
-
-         If this is defined then:
-          - config_autoBrightnessLcdBacklightValues should not be defined
-          - config_screenBrightnessNits must be defined
-          - config_screenBrightnessBacklight must be defined
-
-         This array should have size one greater than the size of the config_autoBrightnessLevels
-         array. The brightness values must be non-negative and non-decreasing. This must be
-         overridden in platform specific overlays -->
-    <array name="config_autoBrightnessDisplayValuesNits">
-        <item>12</item>
-        <item>17</item>
+    <!-- Array of output values for LCD backlight corresponding to the lux values
+         in the config_autoBrightnessLevels array.  This array should have size one greater
+         than the size of the config_autoBrightnessLevels array.
+         The brightness values must be between 0 and 255 and be non-decreasing.
+         This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>22</item>
         <item>25</item>
-        <item>30</item>
+        <item>28</item>
+        <item>33</item>
         <item>35</item>
-        <item>40</item>
-        <item>62</item>
-        <item>84.5</item>
-        <item>108</item>
-        <item>119</item>
-        <item>119</item>
-        <item>119</item>
-        <item>122.5</item>
-        <item>122.5</item>
-        <item>126</item>
-        <item>134</item>
-        <item>152</item>
-        <item>178</item>
-        <item>249</item>
-        <item>420</item>
-        <item>420</item>
-        <item>468</item>
-        <item>515</item>
-        <item>563</item>
-        <item>610</item>
-        <item>658</item>
-        <item>705</item>
-        <item>753</item>
-        <item>776</item>
-        <item>800</item>
-        <item>800</item>
-    </array>
+        <item>37</item>
+        <item>49</item>
+        <item>64</item>
+        <item>64</item>
+        <item>65</item>
+        <item>67</item>
+        <item>72</item>
+        <item>98</item>
+        <item>145</item>
+        <item>145</item>
+        <item>163</item>
+        <item>163</item>
+        <item>172</item>
+        <item>172</item>
+        <item>181</item>
+        <item>181</item>
+        <item>191</item>
+        <item>191</item>
+        <item>200</item>
+        <item>200</item>
+        <item>209</item>
+        <item>209</item>
+        <item>218</item>
+        <item>218</item>
+        <item>227</item>
+        <item>227</item>
+        <item>236</item>
+        <item>236</item>
+        <item>245</item>
+        <item>245</item>
+        <item>255</item>
+    </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
          values in the config_screenBrightnessNits array.
 
          This array should be equal in size to config_screenBrightnessNits. -->
     <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -483,6 +486,22 @@
         <item>253</item>
         <item>254</item>
         <item>255</item>
+        <item>269</item>
+        <item>284</item>
+        <item>298</item>
+        <item>313</item>
+        <item>327</item>
+        <item>342</item>
+        <item>356</item>
+        <item>370</item>
+        <item>385</item>
+        <item>399</item>
+        <item>414</item>
+        <item>428</item>
+        <item>442</item>
+        <item>457</item>
+        <item>471</item>
+        <item>486</item>
     </integer-array>
 
     <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
@@ -493,6 +512,7 @@
 
          This array should be equal in size to config_screenBrightnessBacklight -->
     <array name="config_screenBrightnessNits">
+        <item>2</item>
         <item>2.1</item>
         <item>2.3</item>
         <item>2.4</item>
@@ -748,6 +768,22 @@
         <item>416.8</item>
         <item>418.4</item>
         <item>420</item>
+        <item>444</item>
+        <item>468</item>
+        <item>491</item>
+        <item>515</item>
+        <item>539</item>
+        <item>563</item>
+        <item>586</item>
+        <item>610</item>
+        <item>634</item>
+        <item>658</item>
+        <item>681</item>
+        <item>705</item>
+        <item>729</item>
+        <item>753</item>
+        <item>776</item>
+        <item>800</item>
     </array>
 
     <!-- Minimum screen brightness setting allowed by power manager.
