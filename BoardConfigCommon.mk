@@ -31,6 +31,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
 
+# Audio
+BOARD_USE_USB_OFFLOAD := true
+## TODO: r8s do not support quad mic
+
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars

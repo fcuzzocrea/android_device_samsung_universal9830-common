@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.0-impl:32 \
     audio.bluetooth.default \
+    audio.primary.exynos990 \
     audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
@@ -318,7 +319,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libaudioparams_shim \
     libsensorndkbridge_shim
 
 # Shipping API level
