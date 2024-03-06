@@ -4975,6 +4975,10 @@ bool proxy_set_route(void *proxy, int ausage, int device, int modifier, bool set
 
     modifier_type routed_modifier = (modifier_type)modifier;
 
+    // HACK: Force dual speaker
+    if (routed_device == DEVICE_SPEAKER)
+        routed_device = DEVICE_SPEAKER_DUAL;
+
     if (set) {
         /* check whether path routing is for AP/CP call bandwidth or speaker/DEX Device Change */
         if (routed_device < DEVICE_MAIN_MIC) {
