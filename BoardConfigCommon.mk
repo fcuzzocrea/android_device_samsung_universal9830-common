@@ -33,6 +33,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a15
 
 # Audio
 BOARD_USE_USB_OFFLOAD := true
+BOARD_LOW_LATENCY_CAPTURE_DURATION := 20
 ## TODO: r8s do not support quad mic
 
 # Camera
