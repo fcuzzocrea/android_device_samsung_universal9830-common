@@ -97,35 +97,6 @@
             "ResetOnInit": true
         },
         {
-            "Name": "CPUMaxFreq",
-            "Path": "/sys/power/cpufreq_max_limit",
-            "Values": [
-                "2730000",
-                "0"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
-            "Name": "CPUMinFreq",
-            "Path": "/sys/power/cpufreq_min_limit",
-            "Values": [
-                "2730000",
-                "0"
-            ],
-            "ResetOnInit": true
-        },
-        {
-            "Name": "LPMDisable",
-            "Path": "/sys/power/cstate_control",
-            "Values": [
-                "0",
-                "1"
-            ],
-            "DefaultIndex": 0,
-            "ResetOnInit": true
-        },
-        {
             "Name": "CoreNumMax",
             "Path": "/sys/power/cpuhp/set_online_cpu",
             "Values": [
