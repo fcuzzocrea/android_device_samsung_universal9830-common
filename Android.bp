@@ -4,4 +4,8 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 soong_namespace {
+	imports: [
+        "hardware/samsung_slsi-linaro/interfaces",
+        "vendor/samsung/universal9830-common"
+	],
 }
