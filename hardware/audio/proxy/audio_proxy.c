@@ -1014,15 +1014,6 @@ static void bta2dp_playback_stop(struct audio_proxy *aproxy)
 
     return ;
 }
-
-static const audio_format_t AUDIO_FORMAT_SEC_BT_A2DP_OFFLOAD = (audio_format_t)0x200000u;
-static inline bool audio_is_bt_offload_format(audio_format_t format){
-     if ((format & AUDIO_FORMAT_SEC_BT_A2DP_OFFLOAD) == AUDIO_FORMAT_SEC_BT_A2DP_OFFLOAD) {
-         return true;
-     }
-     return false;
-
-}
 #endif
 
 static void disable_mute_playback(void *proxy)
@@ -5751,7 +5742,7 @@ int proxy_set_parameters(void *proxy, void *parameters)
         pthread_mutex_unlock(&aproxy->a2dp_lock);
     }
 
-    ret = str_parms_get_str(parms, AUDIO_PARAMETER_SEC_LOCAL_A2DP_OFFLOAD_ENABLE, value, sizeof(value));
+    ret = str_parms_get_str(parms, "bt_offload_enable", value, sizeof(value));
     if (ret >= 0 && aproxy->support_bta2dp) {
         pthread_mutex_lock(&aproxy->a2dp_lock);
         bool is_bt_offload = (strcmp(value, AUDIO_PARAMETER_VALUE_TRUE)) ? false : true;
@@ -5781,7 +5772,7 @@ int proxy_set_parameters(void *proxy, void *parameters)
         pthread_mutex_unlock(&aproxy->a2dp_lock);
     }
 
-    ret = str_parms_get_int(parms, AUDIO_PARAMETER_SEC_GLOBAL_A2DP_DELAY_REPORT, &val);
+    ret = str_parms_get_int(parms, "A2dpDelayReport", &val);
     if (ret >= 0 && aproxy->support_bta2dp) {
         pthread_mutex_lock(&aproxy->a2dp_lock);
         /* adjustment value to make presentation position as fast as adjust_latency(ms) */
