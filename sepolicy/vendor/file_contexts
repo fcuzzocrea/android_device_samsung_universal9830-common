@@ -44,6 +44,9 @@
 /dev/m2m1shot_scaler0    u:object_r:m2m1shot_device:s0
 /dev/vertex10            u:object_r:npu_device:s0
 
+# DIT device
+/dev/dit                 u:object_r:dit_device:s0
+
 # Fingerprint
 /dev/goodix_fp      u:object_r:fp_sensor_device:s0
 /dev/qbt2000_fd     u:object_r:fp_sensor_device:s0
@@ -105,6 +108,8 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.wifi@[0-9]\.[0-9]-service                                        u:object_r:hal_wifi_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@[0-9]\.[0-9]-service\.universal9830                    u:object_r:hal_lineage_livedisplay_exynos_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service                   u:object_r:hal_vendor_eden_runtime_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.tetheroffload@[0-9]\.[0-9]-service                  u:object_r:hal_tetheroffload_default_exec:s0
+
 
 ####################################
 # Same-process HAL files and their dependencies
