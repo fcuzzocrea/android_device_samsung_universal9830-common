@@ -39,6 +39,10 @@ BOARD_USE_SEC_AUDIO_DYNAMIC_NREC := true
 BOARD_LOW_LATENCY_CAPTURE_DURATION := 20
 ## TODO: r8s do not support quad mic
 
+BOARD_SOUNDTRIGGER_CONFIG_PATH := $(COMMON_PATH)/configs/sthal
+BOARD_USE_SOUNDTRIGGER_HAL := true
+BOARD_USE_SOUNDTRIGGER_HAL_MMAP := true
+
 # Camera
 $(call soong_config_set,samsungCameraVars,usage_64bit,true)
 SOONG_CONFIG_NAMESPACES += samsungCameraVars
