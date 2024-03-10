@@ -232,6 +232,14 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Soong namespace
 PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
 
+# SoundTrigger
+PRODUCT_PACKAGES += \
+    android.hardware.soundtrigger@2.3-impl:32 \
+    sound_trigger.primary.exynos990
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # TUI
 PRODUCT_PACKAGES += \
     teegris_v4.rc \

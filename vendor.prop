@@ -47,3 +47,6 @@ vendor.hwc.exynos.vsync_mode=0
 # RIL
 ro.vendor.epdg.support=true
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+
+# SoundTrigger
+ro.hardware.sound_trigger.primary=exynos990
