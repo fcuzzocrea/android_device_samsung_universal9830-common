@@ -29,8 +29,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@5.0-impl:32 \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.a2dp@1.0-impl-exynos \
     android.hardware.soundtrigger@2.0-impl:32 \
-    audio.bluetooth.default \
     audio.primary.exynos990 \
     audio.r_submix.default \
     libaudioroute \

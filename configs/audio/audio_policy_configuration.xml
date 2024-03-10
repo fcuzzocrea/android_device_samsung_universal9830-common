@@ -65,6 +65,23 @@
                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
+
+
+                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
+                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
+                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
+                </devicePort>
+
+
+
                 <devicePort tagName="Aux Device Out" role="sink" type="AUDIO_DEVICE_OUT_AUX_DIGITAL">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="44100,48000,64000,88200,96000,128000,176400,192000"
@@ -132,6 +149,14 @@
                        sources="primary-out,deep-buffer,fast"/>
                 <route type="mix" sink="Bt Sco Car Kit"
                        sources="primary-out,deep-buffer,fast"/>
+
+                <route type="mix" sink="BT A2DP Out"
+                       sources="primary-out,deep_buffer,fast"/>
+                <route type="mix" sink="BT A2DP Headphones"
+                       sources="primary-out,deep_buffer,fast"/>
+                <route type="mix" sink="BT A2DP Speaker"
+                       sources="primary-out,deep_buffer,fast"/>
+
                 <route type="mix" sink="USB Device Out"
                        sources="primary-out,fast" />
                 <route type="mix" sink="USB Headset Out"
