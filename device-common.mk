@@ -340,6 +340,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     thermal_symlinks.samsung
 
+# Tetheroffload
+PRODUCT_PACKAGES += \
+    vendor.samsung_slsi.hardware.tetheroffload@1.1-service
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/thermal/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
 

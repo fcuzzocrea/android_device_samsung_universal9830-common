@@ -1,0 +1,20 @@
+# associate netdomain to use for accessing internet sockets
+net_domain(hal_tetheroffload_default)
+
+# Allow operations with /dev/dit
+allow hal_tetheroffload_default dit_device:chr_file rw_file_perms;
+
+# Allow receiving NETLINK messages
+allow hal_tetheroffload_default self:{
+    netlink_socket
+    netlink_generic_socket
+} create_socket_perms_no_ioctl;
+
+# Alloc check interface
+allow hal_tetheroffload_default netd:unix_dgram_socket create_socket_perms;
+allow hal_tetheroffload_default netd:unix_dgram_socket {read write};
+
+# Register to hwbinder service
+add_hwservice(hal_tetheroffload_default, hal_tetheroffload_hwservice)
+hwbinder_use(hal_tetheroffload_default)
+get_prop(hal_tetheroffload_default, hwservicemanager_prop)
