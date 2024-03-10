@@ -239,6 +239,7 @@ on init
     chmod 0664 /sys/power/cpufreq_max_limit
 
     # GPU DVFS
+    chown radio system /sys/devices/platform/18500000.mali/cl_boost_disable
     chown radio system /sys/devices/platform/18500000.mali/dvfs_min_lock
     chown radio system /sys/devices/platform/18500000.mali/dvfs_max_lock
     chown radio system /sys/devices/platform/18500000.mali/power_policy
@@ -246,8 +247,6 @@ on init
     chmod 0664 /sys/devices/platform/18500000.mali/dvfs_min_lock
     chmod 0664 /sys/devices/platform/18500000.mali/dvfs_max_lock
     chmod 0664 /sys/devices/platform/18500000.mali/power_policy
-
-    write /sys/devices/platform/18500000.mali/dvfs 0
 
     # am_app_launch
     chmod 0664 /sys/kernel/mm/vmscan/am_app_launch
