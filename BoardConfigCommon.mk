@@ -180,6 +180,12 @@ BOARD_SEPOLICY_TEE_FLAVOR := teegris
 include device/samsung_slsi/sepolicy/sepolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
+# SoundTrigger
+BOARD_SOUNDTRIGGER_CONFIG_PATH := $(COMMON_PATH)/configs/sthal
+BOARD_USE_SOUNDTRIGGER_HAL := true
+BOARD_USE_SOUNDTRIGGER_HAL_2_3 := true
+BOARD_USE_SOUNDTRIGGER_HAL_MMAP := true
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3

@@ -328,7 +328,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # SoundTrigger
 PRODUCT_PACKAGES += \
-    android.hardware.soundtrigger@2.0-impl:32
+    android.hardware.soundtrigger@2.3-impl:32 \
+    sound_trigger.primary.exynos990
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
