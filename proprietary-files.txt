@@ -112,6 +112,7 @@ vendor/etc/gnss/gps.xml
 vendor/etc/init/vendor.samsung.hardware.gnss@2.1-service.rc
 vendor/etc/sensor/lhd.conf
 -vendor/lib64/hw/android.hardware.gnss@2.1-impl.so
+-vendor/lib64/hw/flp.default.so
 -vendor/lib64/hw/gps.default.so
 -vendor/lib64/hw/vendor.samsung.hardware.gnss@2.1-impl.so
 -vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
