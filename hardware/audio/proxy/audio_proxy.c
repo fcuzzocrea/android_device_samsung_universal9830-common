@@ -337,7 +337,6 @@ static bool is_device_speaker(device_type device)
     }
 }
 
-#ifdef SUPPORT_USB_OFFLOAD
 static bool is_usb_play_device(device_type device)
 {
     return (device == DEVICE_USB_HEADSET ||
@@ -350,7 +349,6 @@ static bool is_usb_mic_device(device_type device)
                 device == DEVICE_USB_FULL_MIC ||
                 device == DEVICE_USB_HCO_MIC);
 }
-#endif
 
 #ifdef SUPPORT_QUAD_MIC
 static bool is_quad_mic_device(device_type device)
@@ -1639,7 +1637,7 @@ static void make_gain(char *path_name, char *gain_name)
 
     return ;
 }
-
+#ifdef SUPPORT_USB_OFFLOAD
 static void add_usb_path_extn(
     void *proxy,
     audio_usage ausage,
@@ -1693,7 +1691,7 @@ static void add_usb_path_extn(
 
     return;
 }
-
+#endif
 static void add_dual_path(void *proxy, char *path_name)
 {
     struct audio_proxy *aproxy = proxy;
@@ -1843,7 +1841,9 @@ static void set_route(void *proxy, audio_usage ausage, device_type device, int m
 
     make_path(ausage, device, path_name);
     add_dual_path(aproxy, path_name);
+#ifdef SUPPORT_USB_OFFLOAD
     add_usb_path_extn(aproxy, ausage, path_name, device);
+#endif
 #ifdef SEC_PRODUCT_FEATURE_AUDIO_COMMON
     add_mixer_name_path(aproxy, path_name);
 #endif
@@ -1877,7 +1877,9 @@ static void set_reroute(void *proxy, audio_usage old_ausage, device_type old_dev
     // 1. Unset Active Route
     make_path(old_ausage, old_device, path_name);
     add_dual_path(aproxy, path_name);
+#ifdef SUPPORT_USB_OFFLOAD
     add_usb_path_extn(aproxy, old_ausage, path_name, old_device);
+#endif
 #ifdef SEC_PRODUCT_FEATURE_AUDIO_COMMON
     add_mixer_name_path(aproxy, path_name);
 #endif
@@ -1921,7 +1923,9 @@ static void set_reroute(void *proxy, audio_usage old_ausage, device_type old_dev
     if (new_device != DEVICE_AUX_DIGITAL) {
         make_path(new_ausage, new_device, path_name);
         add_dual_path(aproxy, path_name);
+#ifdef SUPPORT_USB_OFFLOAD
         add_usb_path_extn(aproxy, new_ausage, path_name, new_device);
+#endif
 #ifdef SEC_PRODUCT_FEATURE_AUDIO_COMMON
         add_mixer_name_path(aproxy, path_name);
 #endif
@@ -1952,7 +1956,9 @@ static void reset_route(void *proxy, audio_usage ausage, device_type device)
 
     make_path(ausage, device, path_name);
     add_dual_path(aproxy, path_name);
+#ifdef SUPPORT_USB_OFFLOAD
     add_usb_path_extn(aproxy, ausage, path_name, device);
+#endif
 #ifdef SEC_PRODUCT_FEATURE_AUDIO_COMMON
     add_mixer_name_path(aproxy, path_name);
 #endif
@@ -3710,14 +3716,13 @@ int proxy_get_presen_position(void *proxy_stream, uint64_t *frames, struct times
 int proxy_getparam_playback_stream(void *proxy_stream, void *query_params, void *reply_params)
 {
     struct audio_proxy_stream *apstream = (struct audio_proxy_stream *)proxy_stream;
+    struct audio_proxy *aproxy = getInstance();
     struct str_parms *query = (struct str_parms *)query_params;
     struct str_parms *reply = (struct str_parms *)reply_params;
     int val = -1;
     bool str_updated = false;
 
 #ifdef SUPPORT_USB_OFFLOAD
-    struct audio_proxy *aproxy = getInstance();
-
     if (apstream->stream_type == ASTREAM_PLAYBACK_NO_ATTRIBUTE &&
         proxy_is_usb_playback_device_connected(aproxy->usb_aproxy)) {
         // get USB playback param information
