@@ -5717,7 +5717,7 @@ int proxy_set_parameters(void *proxy, void *parameters)
     }
 #ifdef SUPPORT_BTA2DP_OFFLOAD
     /* BT A2DP Specific */
-    ret = str_parms_get_str(parms, "A2dpSuspended", value, sizeof(value));
+    ret = str_parms_get_str(parms, AUDIO_PARAMETER_KEY_BT_A2DP_SUSPENDED, value, sizeof(value));
     if (ret >= 0 && aproxy->support_bta2dp) {
         pthread_mutex_lock(&aproxy->a2dp_lock);
         bool cur_state = proxy_a2dp_is_suspended();
@@ -5742,11 +5742,10 @@ int proxy_set_parameters(void *proxy, void *parameters)
         pthread_mutex_unlock(&aproxy->a2dp_lock);
     }
 
-    ret = str_parms_get_str(parms, "bt_offload_enable", value, sizeof(value));
+    ret = str_parms_get_str(parms, AUDIO_PARAMETER_DEVICE_CONNECT, value, sizeof(value));
     if (ret >= 0 && aproxy->support_bta2dp) {
         pthread_mutex_lock(&aproxy->a2dp_lock);
-        bool is_bt_offload = (strcmp(value, AUDIO_PARAMETER_VALUE_TRUE)) ? false : true;
-        if (is_bt_offload && aproxy->a2dp_out_enabled == false) {
+        if (aproxy->a2dp_out_enabled == false) {
             status = proxy_a2dp_open();
             if (status == 0) {
                 aproxy->a2dp_out_enabled = true;
@@ -5761,7 +5760,14 @@ int proxy_set_parameters(void *proxy, void *parameters)
                     bta2dp_playback_start(aproxy);  // bt path already enabled, then bta2dp_playback_start hear
                 }
             }
-        } else if (!is_bt_offload && aproxy->a2dp_out_enabled == true) {
+        }
+        pthread_mutex_unlock(&aproxy->a2dp_lock);
+    }
+
+    ret = str_parms_get_str(parms, AUDIO_PARAMETER_DEVICE_DISCONNECT, value, sizeof(value));
+    if (ret >= 0 && aproxy->support_bta2dp) {
+        pthread_mutex_lock(&aproxy->a2dp_lock);
+        if (aproxy->a2dp_out_enabled == true) {
             status = proxy_a2dp_close();
             if (status == 0) {
                 aproxy->a2dp_out_enabled = false;
@@ -5772,7 +5778,7 @@ int proxy_set_parameters(void *proxy, void *parameters)
         pthread_mutex_unlock(&aproxy->a2dp_lock);
     }
 
-    ret = str_parms_get_int(parms, "A2dpDelayReport", &val);
+    ret = str_parms_get_int(parms, AUDIO_PARAMETER_DEVICE_ADDITIONAL_OUTPUT_DELAY, &val);
     if (ret >= 0 && aproxy->support_bta2dp) {
         pthread_mutex_lock(&aproxy->a2dp_lock);
         /* adjustment value to make presentation position as fast as adjust_latency(ms) */
