@@ -72,7 +72,7 @@ function blob_fixup() {
             sed -i 's/ro\.factory\.factory_binary/ro.vendor.factory_binary\x00/g' "${2}"
             ;;
         vendor/lib*/libsec-ril*.so)
-            xxd -p -c0 "${2}" | sed "s/600e40f9820c805224008052e10315aa080040f9e30314aa/600e40f9820c805224008052e10315aa080040f9030080d2/g" | xxd -r -p > "${2}".patched
+            xxd -p -c0 "${2}" | sed "s/800e40f9e10316aa820c8052e30315aa/800e40f9e10316aa820c8052080080d2/g" | xxd -r -p > "${2}".patched
             mv "${2}".patched "${2}"
             ;;
         vendor/lib*/libsensorlistener.so)
