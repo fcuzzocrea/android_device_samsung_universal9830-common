@@ -267,6 +267,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.samsung
 
+# Rebalance Interrupts
+PRODUCT_PACKAGES += \
+    rebalance_interrupts-samsung
+
 # Recovery
 PRODUCT_PACKAGES += \
     init.recovery.exynos990.rc
