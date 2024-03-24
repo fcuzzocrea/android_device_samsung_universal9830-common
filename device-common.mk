@@ -283,7 +283,7 @@ PRODUCT_PACKAGES += \
 
 # Rebalance Interrupts
 PRODUCT_PACKAGES += \
-    rebalance_interrupts-vendor
+    rebalance_interrupts-samsung
 
 # Recovery
 PRODUCT_PACKAGES += \
