@@ -79,8 +79,8 @@ function blob_fixup() {
             "${PATCHELF}" --add-needed libsensorndkbridge_shim.so "${2}"
             ;;
         vendor/lib*/libskeymaster4device.so)
-            "${PATCHELF}" --replace-needed libcrypto.so libcrypto-v33.so "${2}"
-            "${PATCHELF}" --add-needed libssl-v33.so "${2}"
+            "${PATCHELF}" --replace-needed libcrypto.so libcrypto-tm.so "${2}"
+            "${PATCHELF}" --add-needed libssl-tm.so "${2}"
             "${PATCHELF}" --add-needed libcrypto_shim.so "${2}"
             ;;
         vendor/lib*/libwvhidl.so)
