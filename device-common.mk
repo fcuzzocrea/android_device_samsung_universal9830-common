@@ -294,6 +294,8 @@ PRODUCT_PACKAGES += \
     init.baseband.rc \
     init.vendor.rilchip.rc \
     init.vendor.rilcommon.rc \
+    libnetutils.vendor:64 \
+    libsqlite.vendor:64 \
     secril_config_svc \
     sehradiomanager
 
