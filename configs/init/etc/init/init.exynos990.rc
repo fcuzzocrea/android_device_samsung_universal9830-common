@@ -67,9 +67,29 @@ on init
     write /dev/cpuset/restricted/cpus 0-3
     write /dev/cpuset/camera-daemon/cpus 0-7
     
+    mkdir /dev/cpuset/camera-daemon-high-group
+    write /dev/cpuset/camera-daemon-high-group/cpus 0-7
+    write /dev/cpuset/camera-daemon-high-group/mems 0
+    chown system system /dev/cpuset/camera-daemon-high-group/tasks
+    chmod 0664 /dev/cpuset/camera-daemon-high-group/tasks
+ 
+    mkdir /dev/cpuset/camera-daemon-mid-group
+    write /dev/cpuset/camera-daemon-mid-group/cpus 0-7
+    write /dev/cpuset/camera-daemon-mid-group/mems 0
+    chown system system /dev/cpuset/camera-daemon-mid-group/tasks
+    chmod 0664 /dev/cpuset/camera-daemon-mid-group/tasks
+ 
+    mkdir /dev/cpuset/camera-daemon-mid-high-group
+    write /dev/cpuset/camera-daemon-mid-high-group/cpus 0-7
+    write /dev/cpuset/camera-daemon-mid-high-group/mems 0
+    chown system system /dev/cpuset/camera-daemon-mid-high-group/tasks
+    chmod 0664 /dev/cpuset/camera-daemon-mid-high-group/tasks
+
     chown system system /dev/cpuset/tasks
     chown system system /dev/cpuset/cgroup.procs
     chmod 0664 /dev/cpuset/tasks
+
+    setprop vendor.powerhal.init 1
 
     # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
     write /dev/cpuctl/background/cpu.shares 1024
@@ -217,8 +237,8 @@ on init
     chmod 0664 /sys/power/cstate_control
 
     # CPUFreq
-    chown system radio /sys/power/cpufreq_min_limit
-    chown system radio /sys/power/cpufreq_max_limit
+    chown system system /sys/power/cpufreq_min_limit
+    chown system system /sys/power/cpufreq_max_limit
     chown system radio /sys/power/cpufreq_table
     chmod 0664 /sys/power/cpufreq_min_limit
     chmod 0664 /sys/power/cpufreq_max_limit
@@ -979,7 +999,7 @@ on boot
     chown system radio /sys/class/power_supply/battery/gps
     chown system radio /sys/class/power_supply/battery/wifi
     chown system radio /sys/class/power_supply/battery/lte
-    chown system radio /sys/class/power_supply/battery/lcd
+    chown system system /sys/class/power_supply/battery/lcd
     chown system radio /sys/class/power_supply/ps/status
     chmod 0664 /sys/class/power_supply/battery/wc_control
     chmod 0664 /sys/class/power_supply/battery/wc_control_cnt
@@ -1310,7 +1330,7 @@ on boot
     # ] Permissions for Grip Sensor
 
     # Permissions for Touchscreen
-    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/cmd
     chown system system /sys/class/sec/tsp/input/enabled
     chmod 0660 /sys/class/sec/tsp/input/enabled
     chown system system /sys/class/sec/tsp/enabled
