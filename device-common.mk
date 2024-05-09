@@ -218,7 +218,11 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0.vendor:64
+    android.hardware.power@1.0.vendor:64 \
+    android.hardware.power-service.pixel-libperfmgr
+
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Recovery
 PRODUCT_PACKAGES += \
@@ -256,7 +260,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SHIPPING_API_LEVEL := 29
 
 # Soong namespace
-PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # SoundTrigger
 PRODUCT_PACKAGES += \
