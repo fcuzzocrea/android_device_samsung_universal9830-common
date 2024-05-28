@@ -361,6 +361,9 @@ PRODUCT_PACKAGES += \
     teegris_v4.rc \
     pa_daemon_teegris.rc
 
+# Update
+PRODUCT_SOONG_NAMESPACES += bootable/deprecated-ota
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.samsung \
