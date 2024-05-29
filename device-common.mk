@@ -20,6 +20,12 @@ COMMON_PATH := device/samsung/universal9830-common
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider-service.samsung \
+    android.hardware.thermal@2.0.vendor \
+    libutilscallstack.vendor
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor:32
