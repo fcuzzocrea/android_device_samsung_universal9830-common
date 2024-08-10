@@ -67,6 +67,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor:64 \
     init.gps.rc
 
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml
+
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.composer.hwc3-service.slsi \
