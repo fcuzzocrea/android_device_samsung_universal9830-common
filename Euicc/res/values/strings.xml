@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (C) 2023 The LineageOS Project
+    SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="sim_illustration_lottie_mappings_json">
+        {
+            "sim_illustration_lottie_mappings": [
+                {
+                    "devices": ["x1slte"],
+                    "illustration_lottie": "sim_illustration_lottie_bottom"
+                },
+                {
+                    "devices": ["x1s"],
+                    "illustration_lottie": "sim_illustration_lottie_bottom"
+                },
+                {
+                    "devices": ["y2s"],
+                    "illustration_lottie": "sim_illustration_lottie_bottom"
+                },
+                {
+                    "devices": ["z3s"],
+                    "illustration_lottie": "sim_illustration_lottie_bottom"
+                }
+            ]
+        }
+    </string>
+    <string name="sim_slot_mappings_json">
+        {
+            "sim-slot-mappings": [
+                {
+                    "devices": ["x1slte"],
+                    "esim-slot-ids": [1],
+                    "psim-slot-ids": [0]
+                },
+                {
+                    "devices": ["x1s"],
+                    "esim-slot-ids": [1],
+                    "psim-slot-ids": [0]
+                },
+                {
+                    "devices": ["y2s"],
+                    "esim-slot-ids": [1],
+                    "psim-slot-ids": [0]
+                },
+                {
+                    "devices": ["z3s"],
+                    "esim-slot-ids": [1],
+                    "psim-slot-ids": [0]
+                }
+            ]
+        }
+    </string>
+</resources>
