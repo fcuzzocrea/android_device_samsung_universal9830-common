@@ -81,6 +81,9 @@ vendor/firmware/volumemonitor.bin
 # Exynos Multi-Format Codec (MFC) Firmware
 vendor/firmware/mfc_fw.bin
 
+# Euicc - from raven-user 14 UP1A.231005.007
+-product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED|a1a8643d4c7905f8c69e4f9602813053628705bf
+
 # Gatekeeper
 -vendor/lib64/hw/gatekeeper.exynos990.so
 
