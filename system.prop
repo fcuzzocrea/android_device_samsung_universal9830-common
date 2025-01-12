@@ -21,7 +21,6 @@ persist.sys.fuse.passthrough.enable=true
 debug.hwui.skia_atrace_enabled=false
 
 # RIL
-persist.sys.fflag.override.settings_network_and_internet_v2=false
 ro.debug_level=0x494d
 
 # Samsung

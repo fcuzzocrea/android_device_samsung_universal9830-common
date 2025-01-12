@@ -78,6 +78,14 @@ vendor.hwc.exynos.vsync_mode=0
 # Incremental FS
 ro.incremental.enable=true
 
+# Media
+debug.stagefright.ccodec_strict_type=true
+debug.stagefright.ccodec_lax_type=true
+debug.stagefright.c2-poolmask=458752
+media.c2.dmabuf.padding=512 # ignored by C2
+debug.stagefright.ccodec_delayed_params=1
+ro.vendor.gpu.dataspace=1
+
 # Power HAL
 vendor.powerhal.disp.idle_support=false
 
