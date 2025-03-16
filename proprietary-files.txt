@@ -1,5 +1,5 @@
-# All unpinned blobs are from SMHXK1
-# Vendor security patch level 2024-10-01
+# All unpinned blobs are from SNHXL1
+# Vendor security patch level 2025-01-01
 
 # Audio
 -vendor/lib/libSamsungPostProcessConvertor.so
